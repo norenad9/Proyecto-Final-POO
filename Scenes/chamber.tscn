@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://chtlw36grpgh1"]
+
+[ext_resource type="Texture2D" uid="uid://cel2ih6fqwc8v" path="res://Assets/mp_spaceship_tileset_pack_v1.0/mp_spaceship_tileset_pack_v1.0/cryo_chambers.png" id="1_2jd1k"]
+[ext_resource type="Script" uid="uid://ckibobywqy4x7" path="res://Scenes/chamber.gd" id="1_vhq8i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhq8i"]
+atlas = ExtResource("1_2jd1k")
+region = Rect2(16, 7, 32, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prqlx"]
+atlas = ExtResource("1_2jd1k")
+region = Rect2(48, 7, 32, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgabx"]
+atlas = ExtResource("1_2jd1k")
+region = Rect2(80, 7, 32, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwt3f"]
+atlas = ExtResource("1_2jd1k")
+region = Rect2(112, 7, 32, 78)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_te6kr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhq8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prqlx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgabx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwt3f")
+}],
+"loop": true,
+"name": &"chamber",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ykntj"]
+radius = 9.0
+height = 58.0
+
+[node name="Chamber" type="CharacterBody2D"]
+script = ExtResource("1_vhq8i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -39)
+sprite_frames = SubResource("SpriteFrames_te6kr")
+animation = &"chamber"
+autoplay = "chamber"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -38)
+shape = SubResource("CapsuleShape2D_ykntj")
