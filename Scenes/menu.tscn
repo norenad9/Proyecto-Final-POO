@@ -14,23 +14,25 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_top = 8.0
-offset_right = 40.0
-offset_bottom = 48.0
+offset_left = -572.0
+offset_top = -321.0
+offset_right = 575.0
+offset_bottom = 324.0
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -163.0
-offset_top = -154.0
-offset_right = 100.5
-offset_bottom = 38.5
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -215.5
+offset_top = -77.0
+offset_right = 215.5
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 theme = SubResource("Theme_u4yt8")
+theme_override_constants/separation = 50
 
 [node name="btnSettings" type="Button" parent="BoxContainer"]
 layout_mode = 2
@@ -39,9 +41,16 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 50
 text = "Settings"
 
-[node name="btnSettings2" type="Button" parent="BoxContainer"]
+[node name="btnExit" type="Button" parent="BoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 50
-text = "Settings"
+text = "Exit"
+
+[node name="btnStart" type="Button" parent="BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+text = "Start"
