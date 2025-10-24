@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="POO_Project"
-run/main_scene="uid://cahlov7dwyiu7"
+run/main_scene="uid://c6gs8hwto7vog"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

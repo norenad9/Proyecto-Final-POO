@@ -1,8 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6gs8hwto7vog"]
+[gd_scene load_steps=9 format=3 uid="uid://c6gs8hwto7vog"]
+
+[ext_resource type="Texture2D" uid="uid://cvct6d7mcnec6" path="res://Assets/Backgrounds/Interfaz_Zero_Safe.jpg" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://e7dnh6ckkn14" path="res://Scenes/menu.gd" id="1_xhh6f"]
 
 [sub_resource type="Theme" id="Theme_u4yt8"]
 
-[node name="Control" type="Control"]
+[sub_resource type="SystemFont" id="SystemFont_xhh6f"]
+font_names = PackedStringArray("Dubai")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cayip"]
+bg_color = Color(0.92156863, 0.5647059, 0.11764706, 1)
+border_color = Color(0, 0, 0, 1)
+corner_detail = 20
+expand_margin_left = 40.0
+expand_margin_right = 40.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_158mb"]
+bg_color = Color(0.61, 0.371185, 0.0793, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwsa2"]
+bg_color = Color(0.6117647, 0.37254903, 0.078431375, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsrd8"]
+bg_color = Color(0.6117647, 0.37254903, 0.078431375, 1)
+
+[node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -11,13 +34,18 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_xhh6f")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -572.0
-offset_top = -321.0
-offset_right = 575.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
 offset_bottom = 324.0
+texture = ExtResource("1_1rerr")
+expand_mode = 1
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 1
@@ -26,31 +54,66 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -215.5
-offset_top = -77.0
-offset_right = 215.5
+offset_left = -160.0
+offset_top = 156.0
+offset_right = 344.0
+offset_bottom = 396.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_u4yt8")
-theme_override_constants/separation = 50
+theme_override_constants/separation = 100
 
 [node name="btnSettings" type="Button" parent="BoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_xhh6f")
 theme_override_font_sizes/font_size = 50
-text = "Settings"
+theme_override_styles/normal = SubResource("StyleBoxFlat_cayip")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_158mb")
+text = "SETINGS
+"
 
 [node name="btnExit" type="Button" parent="BoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_xhh6f")
 theme_override_font_sizes/font_size = 50
-text = "Exit"
+theme_override_styles/normal = SubResource("StyleBoxFlat_cayip")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wwsa2")
+text = "EXIT
+"
 
-[node name="btnStart" type="Button" parent="BoxContainer"]
+[node name="BoxContainer2" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = 116.0
+offset_right = 97.0
+offset_bottom = 252.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_u4yt8")
+
+[node name="btnStart" type="Button" parent="BoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_xhh6f")
 theme_override_font_sizes/font_size = 50
-text = "Start"
+theme_override_styles/normal = SubResource("StyleBoxFlat_cayip")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jsrd8")
+text = "START
+"
+
+[connection signal="pressed" from="BoxContainer/btnSettings" to="." method="_on_btn_settings_pressed"]
+[connection signal="pressed" from="BoxContainer/btnExit" to="." method="_on_btn_exit_pressed"]
+[connection signal="pressed" from="BoxContainer2/btnStart" to="." method="_on_btn_start_pressed"]
