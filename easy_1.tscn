@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://hu5p3e0k6ejl"]
+
+[ext_resource type="Script" uid="uid://dcwnhsn3ixki5" path="res://easy_1.gd" id="1_pbm54"]
+[ext_resource type="AudioStream" uid="uid://gy2e6i2drpi5" path="res://Music/tareasNew.mp3" id="2_xuvj3"]
+[ext_resource type="AudioStream" uid="uid://d4g8pd7771haj" path="res://Music/tarea_completa.wav" id="4_ocdgh"]
+
+[node name="easy1" type="Control"]
+layout_mode = 3
+anchor_right = 0.0050000004
+anchor_bottom = 0.006
+offset_right = -14.400001
+offset_bottom = -10.32
+script = ExtResource("1_pbm54")
+
+[node name="PuzzleContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Piece1" type="TextureButton" parent="PuzzleContainer"]
+layout_mode = 2
+
+[node name="Piece2" type="TextureButton" parent="PuzzleContainer"]
+layout_mode = 2
+
+[node name="Piece3" type="TextureButton" parent="PuzzleContainer"]
+layout_mode = 2
+
+[node name="Piece4" type="TextureButton" parent="PuzzleContainer"]
+layout_mode = 2
+
+[node name="WinMessage" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Instructions" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xuvj3")
+autoplay = true
+
+[node name="ganarNivel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ocdgh")

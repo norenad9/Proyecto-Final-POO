@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddjl0vtmykhlh"]
+
+[ext_resource type="Script" uid="uid://vpverfi6dowk" path="res://game_over_window_3.gd" id="1_r7uax"]
+[ext_resource type="AudioStream" uid="uid://c1tpkicgvwdxp" path="res://Music/perdidaTareas.wav" id="2_sdr2w"]
+
+[node name="game_over_window_3" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_r7uax")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_sdr2w")
+autoplay = true

@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://mhw40vpkhmy0"]
+
+[ext_resource type="Script" uid="uid://clurd7g3glrx4" path="res://settings.gd" id="1_6mhpt"]
+[ext_resource type="Texture2D" uid="uid://biaj86h5fk7mi" path="res://interfaz/Captura de pantalla 2025-11-22 a la(s) 12.20.39 p.m..png" id="2_ohexs"]
+[ext_resource type="Texture2D" uid="uid://dghnx5nlcsylw" path="res://interfaz/Captura de pantalla 2025-11-22 a la(s) 12.20.50 p.m..png" id="3_1k4ii"]
+[ext_resource type="Texture2D" uid="uid://cdyc1o1n1r4xy" path="res://interfaz/Captura de pantalla 2025-11-22 a la(s) 12.21.02 p.m..png" id="4_82xqq"]
+[ext_resource type="Texture2D" uid="uid://6fhyy14i30aw" path="res://interfaz/Captura de pantalla 2025-11-22 a la(s) 12.21.12 p.m..png" id="5_y43lv"]
+[ext_resource type="Texture2D" uid="uid://c3bikvorsilnw" path="res://interfaz/Captura de pantalla 2025-11-22 a la(s) 12.21.25 p.m..png" id="6_7eiv2"]
+[ext_resource type="Texture2D" uid="uid://dxf0ayacgmklg" path="res://interfaz/Captura de pantalla 2025-11-22 a la(s) 12.21.39 p.m..png" id="7_tk3m0"]
+[ext_resource type="AudioStream" uid="uid://db0jw5n83jrxh" path="res://Music/Menu Selection Click.wav" id="8_3lj6o"]
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6mhpt")
+
+[node name="escena1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2886.0
+offset_bottom = 1727.0
+texture = ExtResource("2_ohexs")
+
+[node name="escena2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2887.0
+offset_bottom = 1729.0
+texture = ExtResource("3_1k4ii")
+
+[node name="escena3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2891.0
+offset_bottom = 1723.0
+texture = ExtResource("4_82xqq")
+
+[node name="escena4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2876.0
+offset_bottom = 1732.0
+texture = ExtResource("5_y43lv")
+
+[node name="escena5" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2881.0
+offset_bottom = 1725.0
+texture = ExtResource("6_7eiv2")
+
+[node name="escena6" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2878.0
+offset_bottom = 1720.0
+texture = ExtResource("7_tk3m0")
+
+[node name="fade" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 2891.0
+offset_bottom = 1727.0
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="next_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2501.0
+offset_top = 1533.0
+offset_right = 2773.0
+offset_bottom = 1640.0
+
+[node name="back_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 1528.0
+offset_right = 362.0
+offset_bottom = 1633.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_3lj6o")
+autoplay = true

@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://cx284krey8av6"]
+
+[ext_resource type="Script" uid="uid://bx65fyo2d8vuy" path="res://intro.gd" id="1_s2ta7"]
+[ext_resource type="Texture2D" uid="uid://dh86kas45ihch" path="res://intro/esc1.jpeg" id="2_y6ycx"]
+[ext_resource type="Texture2D" uid="uid://dh1qdt26mknvw" path="res://intro/esc_2.jpeg" id="3_y6ycx"]
+[ext_resource type="Texture2D" uid="uid://dd7qlul0uqhhw" path="res://intro/esc3.jpeg" id="4_dk2oa"]
+[ext_resource type="Texture2D" uid="uid://b3yfox6bthvmi" path="res://intro/esc4.jpeg" id="5_7ufi4"]
+[ext_resource type="Texture2D" uid="uid://cx5scxphhbowo" path="res://intro/escena5.png" id="6_h0kys"]
+[ext_resource type="Texture2D" uid="uid://bbnr88f0fftcu" path="res://intro/esc6.jpeg" id="7_d0rr7"]
+[ext_resource type="AudioStream" uid="uid://dq154snvcxaim" path="res://Music/introspace.mp3" id="8_dpxxx"]
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_s2ta7")
+
+[node name="escena1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2886.0
+offset_bottom = 1727.0
+texture = ExtResource("2_y6ycx")
+
+[node name="escena2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2887.0
+offset_bottom = 1729.0
+texture = ExtResource("3_y6ycx")
+
+[node name="escena3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2891.0
+offset_bottom = 1723.0
+texture = ExtResource("4_dk2oa")
+
+[node name="escena4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2876.0
+offset_bottom = 1732.0
+texture = ExtResource("5_7ufi4")
+
+[node name="escena5" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2881.0
+offset_bottom = 1725.0
+texture = ExtResource("6_h0kys")
+
+[node name="escena6" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2878.0
+offset_bottom = 1720.0
+texture = ExtResource("7_d0rr7")
+
+[node name="subtitulo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 44.0
+offset_right = 1746.0
+offset_bottom = 159.0
+
+[node name="fade" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 2891.0
+offset_bottom = 1727.0
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="skip_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2501.0
+offset_top = 1533.0
+offset_right = 2773.0
+offset_bottom = 1640.0
+
+[node name="timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_dpxxx")
+autoplay = true

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://8vttbes4aftc"]
+
+[ext_resource type="Script" uid="uid://fj37rpxwea8r" path="res://you_win_window_3.gd" id="1_cxh88"]
+[ext_resource type="AudioStream" uid="uid://d4g8pd7771haj" path="res://Music/tarea_completa.wav" id="2_xjgnd"]
+
+[node name="you_win_window_3" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_cxh88")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xjgnd")
+autoplay = true

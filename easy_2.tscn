@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://v7d6egs8tcrq"]
+
+[ext_resource type="Script" uid="uid://cafcsfuopi5ey" path="res://easy_2.gd" id="1_odqdg"]
+[ext_resource type="AudioStream" uid="uid://gy2e6i2drpi5" path="res://Music/tareasNew.mp3" id="2_12ywy"]
+[ext_resource type="AudioStream" uid="uid://d4g8pd7771haj" path="res://Music/tarea_completa.wav" id="4_u7iq4"]
+[ext_resource type="AudioStream" uid="uid://co1bstj3fjhc1" path="res://Music/error.mp3" id="5_3oqjy"]
+
+[node name="easy2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_odqdg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_12ywy")
+autoplay = true
+
+[node name="ganarNivel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_u7iq4")
+
+[node name="error" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_3oqjy")

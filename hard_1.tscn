@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cb4fwrt8ifsp1"]
+
+[ext_resource type="Script" uid="uid://clplrv2uekcfb" path="res://hard_1.gd" id="1_k2hyi"]
+[ext_resource type="AudioStream" uid="uid://gy2e6i2drpi5" path="res://Music/tareasNew.mp3" id="2_qgr06"]
+[ext_resource type="AudioStream" uid="uid://c5y4md22j4eyk" path="res://Music/perdidaNivel .ogg" id="3_qvtqi"]
+[ext_resource type="AudioStream" uid="uid://d4g8pd7771haj" path="res://Music/tarea_completa.wav" id="4_i0k6l"]
+[ext_resource type="AudioStream" uid="uid://co1bstj3fjhc1" path="res://Music/error.mp3" id="5_i0k6l"]
+
+[node name="hard1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k2hyi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qgr06")
+
+[node name="perdidaNivel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qvtqi")
+
+[node name="ganarNivel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_i0k6l")
+
+[node name="error" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_i0k6l")

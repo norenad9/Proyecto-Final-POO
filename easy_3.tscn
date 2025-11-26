@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8exi3n01tvb4"]
+
+[ext_resource type="Script" uid="uid://dernrdsxpsgs5" path="res://easy_3.gd" id="1_aagln"]
+[ext_resource type="AudioStream" uid="uid://gy2e6i2drpi5" path="res://Music/tareasNew.mp3" id="2_itbjr"]
+[ext_resource type="AudioStream" uid="uid://c5y4md22j4eyk" path="res://Music/perdidaNivel .ogg" id="3_tmyr6"]
+[ext_resource type="AudioStream" uid="uid://d4g8pd7771haj" path="res://Music/tarea_completa.wav" id="4_ilavd"]
+[ext_resource type="AudioStream" uid="uid://co1bstj3fjhc1" path="res://Music/error.mp3" id="5_p1lpf"]
+[ext_resource type="AudioStream" uid="uid://cstvwvv1d38wi" path="res://Music/correcto.wav" id="6_rtd4w"]
+
+[node name="easy3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aagln")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_itbjr")
+autoplay = true
+
+[node name="perdidaNivel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tmyr6")
+
+[node name="ganarNivel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ilavd")
+
+[node name="error" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_p1lpf")
+
+[node name="correcto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_rtd4w")
