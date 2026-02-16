@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djbofu4hgxpjw"
-path="res://.godot/imported/lasers_and_force_fields.png-f214dedcfda2df409a7108f9d94a1c98.ctex"
+path="res://.godot/imported/lasers_and_force_fields.png-96c7a02350bcbd2eddc6e1d71fa08d31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/lasers_and_force_fields.png"
-dest_files=["res://.godot/imported/lasers_and_force_fields.png-f214dedcfda2df409a7108f9d94a1c98.ctex"]
+source_file="res://Assets/lasers_and_force_fields.png"
+dest_files=["res://.godot/imported/lasers_and_force_fields.png-96c7a02350bcbd2eddc6e1d71fa08d31.ctex"]
 
 [params]
 

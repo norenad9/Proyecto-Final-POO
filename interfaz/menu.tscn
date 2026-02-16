@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://b4d35mxcn8qfe"]
+[gd_scene format=4 uid="uid://b4d35mxcn8qfe"]
 
 [ext_resource type="Texture2D" uid="uid://cmgse1g56cu3g" path="res://interfaz/Interface.jpeg" id="1_fyyly"]
 [ext_resource type="Script" uid="uid://brxjn0xjtcc2h" path="res://interfaz/canvas_layer.gd" id="1_x3ya2"]
@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://dnvpygsyhm03" path="res://interfaz/selectm.gd" id="13_felvb"]
 [ext_resource type="Texture2D" uid="uid://bjarsweu5gcpn" path="res://agentez/agentezr.png" id="13_pygft"]
 [ext_resource type="Texture2D" uid="uid://r7lrnt18vy53" path="res://interfaz/lab1.png" id="14_gryui"]
-[ext_resource type="Texture2D" uid="uid://cvurx12ctqq0s" path="res://assets/tilemap_all.png" id="15_5hg6b"]
+[ext_resource type="Texture2D" uid="uid://cvurx12ctqq0s" path="res://Assets/tilemap_all.png" id="15_5hg6b"]
 [ext_resource type="Texture2D" uid="uid://c5eguwl4vpktq" path="res://interfaz/lab2.png" id="15_qb35y"]
 [ext_resource type="Texture2D" uid="uid://bg8yg7726tyet" path="res://interfaz/lab3.png" id="16_oacxc"]
 [ext_resource type="Script" uid="uid://btip6x4tf4jxa" path="res://interfaz/flechaa.gd" id="17_7w7ba"]
@@ -7840,7 +7840,7 @@ sources/0 = SubResource("TileSetAtlasSource_pygft")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fhaki"]
 size = Vector2(277, 145)
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=386022183]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -7848,50 +7848,51 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1300971341]
 script = ExtResource("1_x3ya2")
 
-[node name="interface" type="TextureRect" parent="CanvasLayer"]
-offset_right = 2877.0
-offset_bottom = 1716.0
+[node name="interface" type="TextureRect" parent="CanvasLayer" unique_id=1123383962]
+offset_right = 2882.0
+offset_bottom = 1721.0
 texture = ExtResource("1_fyyly")
 
-[node name="ButtonSettings" type="Button" parent="CanvasLayer"]
-offset_left = 1681.0
-offset_top = 1486.0
-offset_right = 1978.0
-offset_bottom = 1590.0
+[node name="ButtonSettings" type="Button" parent="CanvasLayer" unique_id=514005533]
+offset_left = 1718.0
+offset_top = 1378.0
+offset_right = 2015.0
+offset_bottom = 1482.0
 text = "SETTINGS"
 
-[node name="ButtonExit" type="Button" parent="CanvasLayer"]
-offset_left = 879.0
-offset_top = 1485.0
-offset_right = 1172.0
-offset_bottom = 1586.0
+[node name="ButtonExit" type="Button" parent="CanvasLayer" unique_id=1166532069]
+offset_left = 836.0
+offset_top = 1373.0
+offset_right = 1129.0
+offset_bottom = 1474.0
 text = "EXIT"
 
-[node name="start1" type="TextureRect" parent="CanvasLayer"]
-offset_left = 1169.0
-offset_top = 1201.0
-offset_right = 1681.0
-offset_bottom = 1713.0
+[node name="start1" type="TextureRect" parent="CanvasLayer" unique_id=1429778234]
+offset_left = 1173.0
+offset_top = 1193.0
+offset_right = 1685.0
+offset_bottom = 1705.0
 texture = ExtResource("2_fhaki")
 script = ExtResource("3_e3ttq")
 
-[node name="HoverArea" type="Area2D" parent="CanvasLayer"]
+[node name="HoverArea" type="Area2D" parent="CanvasLayer" unique_id=542903783]
+position = Vector2(1, 2)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/HoverArea"]
-position = Vector2(1425, 1455.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/HoverArea" unique_id=1263508366]
+position = Vector2(1427, 1444)
 shape = SubResource("RectangleShape2D_paq8i")
 
-[node name="selectc" type="TextureRect" parent="CanvasLayer"]
+[node name="selectc" type="TextureRect" parent="CanvasLayer" unique_id=880780812]
 visible = false
 offset_right = 2882.0
 offset_bottom = 1721.0
 texture = ExtResource("4_ex7qh")
 script = ExtResource("5_oj6f1")
 
-[node name="flechai" type="TextureRect" parent="CanvasLayer/selectc"]
+[node name="flechai" type="TextureRect" parent="CanvasLayer/selectc" unique_id=202098485]
 layout_mode = 0
 offset_left = 16.0
 offset_top = -22.0
@@ -7900,150 +7901,150 @@ offset_bottom = 478.0
 texture = ExtResource("10_k817x")
 script = ExtResource("11_pir1q")
 
-[node name="flechahover" type="Area2D" parent="CanvasLayer/selectc/flechai"]
+[node name="flechahover" type="Area2D" parent="CanvasLayer/selectc/flechai" unique_id=693787176]
 position = Vector2(-16, 22)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/selectc/flechai/flechahover"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/selectc/flechai/flechahover" unique_id=1539749084]
 position = Vector2(280.5, 223)
 shape = SubResource("RectangleShape2D_fyyly")
 
-[node name="agentep" type="Node2D" parent="CanvasLayer/selectc"]
+[node name="agentep" type="Node2D" parent="CanvasLayer/selectc" unique_id=402851172]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/selectc/agentep"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/selectc/agentep" unique_id=1465964971]
 position = Vector2(638, 1295)
 sprite_frames = SubResource("SpriteFrames_x3ya2")
 animation = &"breath"
 frame_progress = 0.10094987
 
-[node name="Areap" type="Area2D" parent="CanvasLayer/selectc/agentep"]
+[node name="Areap" type="Area2D" parent="CanvasLayer/selectc/agentep" unique_id=1242906277]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/selectc/agentep/Areap"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/selectc/agentep/Areap" unique_id=1754912892]
 position = Vector2(623.75, 1283.25)
 shape = SubResource("RectangleShape2D_e3ttq")
 
-[node name="agentex" type="Node2D" parent="CanvasLayer/selectc"]
+[node name="agentex" type="Node2D" parent="CanvasLayer/selectc" unique_id=1153736730]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/selectc/agentex"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/selectc/agentex" unique_id=1863267]
 position = Vector2(1422, 1285)
 sprite_frames = SubResource("SpriteFrames_k817x")
 animation = &"breath"
 frame_progress = 0.82079273
 
-[node name="Areax" type="Area2D" parent="CanvasLayer/selectc/agentex"]
+[node name="Areax" type="Area2D" parent="CanvasLayer/selectc/agentex" unique_id=604842535]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/selectc/agentex/Areax"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/selectc/agentex/Areax" unique_id=1202592641]
 position = Vector2(1411.25, 1283.75)
 shape = SubResource("RectangleShape2D_ex7qh")
 
-[node name="agentez" type="Node2D" parent="CanvasLayer/selectc"]
+[node name="agentez" type="Node2D" parent="CanvasLayer/selectc" unique_id=1335734759]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/selectc/agentez"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/selectc/agentez" unique_id=1959973779]
 position = Vector2(2248, 1303)
 sprite_frames = SubResource("SpriteFrames_pir1q")
 animation = &"breath"
 frame_progress = 0.4903063
 
-[node name="Areaz" type="Area2D" parent="CanvasLayer/selectc/agentez"]
+[node name="Areaz" type="Area2D" parent="CanvasLayer/selectc/agentez" unique_id=1734886016]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/selectc/agentez/Areaz"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/selectc/agentez/Areaz" unique_id=1145562446]
 position = Vector2(2230, 1283.5)
 shape = SubResource("RectangleShape2D_oj6f1")
 
-[node name="luz1" type="TileMapLayer" parent="CanvasLayer/selectc"]
+[node name="luz1" type="TileMapLayer" parent="CanvasLayer/selectc" unique_id=140743302]
 visible = false
 position = Vector2(5, 0)
 scale = Vector2(13, 13)
 tile_map_data = PackedByteArray("AAABAAMAAAAdABUAAAABAAQAAAAdABYAAAABAAUAAAAdABcAAAACAAMAAAAeABUAAAACAAQAAAAeABYAAAACAAUAAAAeABcAAAADAAMAAAAeABUAAAADAAQAAAAeABYAAAADAAUAAAAeABcAAAAEAAMAAAAfABUAAAAEAAQAAAAfABYAAAAEAAUAAAAfABcAAAA=")
 tile_set = SubResource("TileSet_pygft")
 
-[node name="luz2" type="TileMapLayer" parent="CanvasLayer/selectc"]
+[node name="luz2" type="TileMapLayer" parent="CanvasLayer/selectc" unique_id=1756358884]
 visible = false
 position = Vector2(-50, 0)
 scale = Vector2(13, 13)
 tile_map_data = PackedByteArray("AAAFAAMAAAAdABUAAAAFAAQAAAAdABYAAAAFAAUAAAAdABcAAAAGAAMAAAAeABUAAAAGAAQAAAAeABYAAAAGAAUAAAAeABcAAAAHAAMAAAAeABUAAAAHAAQAAAAeABYAAAAHAAUAAAAeABcAAAAIAAMAAAAfABUAAAAIAAQAAAAfABYAAAAIAAUAAAAfABcAAAA=")
 tile_set = SubResource("TileSet_k817x")
 
-[node name="luz3" type="TileMapLayer" parent="CanvasLayer/selectc"]
+[node name="luz3" type="TileMapLayer" parent="CanvasLayer/selectc" unique_id=446737281]
 visible = false
 position = Vector2(-56, 0)
 scale = Vector2(13, 13)
 tile_map_data = PackedByteArray("AAAJAAMAAAAdABUAAAAJAAQAAAAdABYAAAAJAAUAAAAdABcAAAAKAAMAAAAeABUAAAAKAAQAAAAeABYAAAAKAAUAAAAeABcAAAALAAMAAAAeABUAAAALAAQAAAAeABYAAAALAAUAAAAeABcAAAAMAAMAAAAfABUAAAAMAAQAAAAfABYAAAAMAAUAAAAfABcAAAA=")
 tile_set = SubResource("TileSet_ib76n")
 
-[node name="foco1" type="Node2D" parent="CanvasLayer/selectc"]
+[node name="foco1" type="Node2D" parent="CanvasLayer/selectc" unique_id=658009906]
 
-[node name="f1" type="Sprite2D" parent="CanvasLayer/selectc/foco1"]
+[node name="f1" type="Sprite2D" parent="CanvasLayer/selectc/foco1" unique_id=1084232736]
 position = Vector2(627, 651)
 scale = Vector2(13.072917, 11.749977)
 texture = ExtResource("15_5hg6b")
 region_enabled = true
 region_rect = Rect2(351.9637, 335.96942, 48.015015, 4.9658813)
 
-[node name="f2" type="Sprite2D" parent="CanvasLayer/selectc/foco1"]
+[node name="f2" type="Sprite2D" parent="CanvasLayer/selectc/foco1" unique_id=273147828]
 position = Vector2(627, 651)
 scale = Vector2(13.072917, 11.749977)
 texture = ExtResource("15_5hg6b")
 region_enabled = true
 region_rect = Rect2(352.11444, 351.9776, 47.79489, 4.970093)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="CanvasLayer/selectc/foco1/f2"]
+[node name="TileMapLayer" type="TileMapLayer" parent="CanvasLayer/selectc/foco1/f2" unique_id=1157268699]
 position = Vector2(-24, 0)
 scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAAAAAAAAAAeABcAAAA=")
 tile_set = SubResource("TileSet_5hg6b")
 
-[node name="foco2" type="Node2D" parent="CanvasLayer/selectc"]
+[node name="foco2" type="Node2D" parent="CanvasLayer/selectc" unique_id=45986750]
 
-[node name="f1" type="Sprite2D" parent="CanvasLayer/selectc/foco2"]
+[node name="f1" type="Sprite2D" parent="CanvasLayer/selectc/foco2" unique_id=1085067043]
 position = Vector2(1410, 651.00006)
 scale = Vector2(13.072917, 11.749977)
 texture = ExtResource("15_5hg6b")
 region_enabled = true
 region_rect = Rect2(351.9637, 335.96942, 48.015015, 4.9658813)
 
-[node name="f2" type="Sprite2D" parent="CanvasLayer/selectc/foco2"]
+[node name="f2" type="Sprite2D" parent="CanvasLayer/selectc/foco2" unique_id=1702202294]
 position = Vector2(1410, 651)
 scale = Vector2(13.072917, 11.749977)
 texture = ExtResource("15_5hg6b")
 region_enabled = true
 region_rect = Rect2(352.11444, 351.9776, 47.79489, 4.970093)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="CanvasLayer/selectc/foco2/f2"]
+[node name="TileMapLayer" type="TileMapLayer" parent="CanvasLayer/selectc/foco2/f2" unique_id=1410800806]
 position = Vector2(-24, 0)
 scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAAAAAAAAAAeABcAAAA=")
 tile_set = SubResource("TileSet_cased")
 
-[node name="foco3" type="Node2D" parent="CanvasLayer/selectc"]
+[node name="foco3" type="Node2D" parent="CanvasLayer/selectc" unique_id=2141829924]
 
-[node name="f1" type="Sprite2D" parent="CanvasLayer/selectc/foco3"]
+[node name="f1" type="Sprite2D" parent="CanvasLayer/selectc/foco3" unique_id=190397618]
 position = Vector2(2227, 651)
 scale = Vector2(13.072917, 11.749977)
 texture = ExtResource("15_5hg6b")
 region_enabled = true
 region_rect = Rect2(351.9637, 335.96942, 48.015015, 4.9658813)
 
-[node name="f2" type="Sprite2D" parent="CanvasLayer/selectc/foco3"]
+[node name="f2" type="Sprite2D" parent="CanvasLayer/selectc/foco3" unique_id=845534696]
 position = Vector2(2226, 651.00006)
 scale = Vector2(13.072917, 11.749977)
 texture = ExtResource("15_5hg6b")
 region_enabled = true
 region_rect = Rect2(352.11444, 351.9776, 47.79489, 4.970093)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="CanvasLayer/selectc/foco3/f2"]
+[node name="TileMapLayer" type="TileMapLayer" parent="CanvasLayer/selectc/foco3/f2" unique_id=846392599]
 position = Vector2(-24, 0)
 scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAAAAAAAAAAeABcAAAA=")
 tile_set = SubResource("TileSet_x3ya2")
 
-[node name="selectm" type="TextureRect" parent="CanvasLayer"]
+[node name="selectm" type="TextureRect" parent="CanvasLayer" unique_id=1820468425]
 visible = false
 offset_right = 2875.0
 offset_bottom = 1719.0
 texture = ExtResource("12_ib76n")
 script = ExtResource("13_felvb")
 
-[node name="base" type="TextureRect" parent="CanvasLayer/selectm"]
+[node name="base" type="TextureRect" parent="CanvasLayer/selectm" unique_id=2093175136]
 layout_mode = 0
 offset_left = -15.0
 offset_top = 706.0
@@ -8051,7 +8052,7 @@ offset_right = 1016.0
 offset_bottom = 1453.0
 texture = ExtResource("20_ex7qh")
 
-[node name="lab1b" type="TextureRect" parent="CanvasLayer/selectm"]
+[node name="lab1b" type="TextureRect" parent="CanvasLayer/selectm" unique_id=1845635735]
 layout_mode = 0
 offset_left = 2112.0
 offset_top = 542.0
@@ -8062,7 +8063,7 @@ texture = ExtResource("14_gryui")
 expand_mode = 1
 script = ExtResource("19_pygft")
 
-[node name="lab2b" type="TextureRect" parent="CanvasLayer/selectm"]
+[node name="lab2b" type="TextureRect" parent="CanvasLayer/selectm" unique_id=432625518]
 layout_mode = 0
 offset_left = 2105.0
 offset_top = 854.0
@@ -8073,7 +8074,7 @@ texture = ExtResource("15_qb35y")
 expand_mode = 1
 script = ExtResource("21_x3ya2")
 
-[node name="lab3b" type="TextureRect" parent="CanvasLayer/selectm"]
+[node name="lab3b" type="TextureRect" parent="CanvasLayer/selectm" unique_id=663858799]
 layout_mode = 0
 offset_left = 2115.0
 offset_top = 1170.0
@@ -8084,21 +8085,21 @@ texture = ExtResource("16_oacxc")
 expand_mode = 1
 script = ExtResource("23_k817x")
 
-[node name="preview" type="TextureRect" parent="CanvasLayer/selectm"]
+[node name="preview" type="TextureRect" parent="CanvasLayer/selectm" unique_id=1628320111]
 layout_mode = 0
 offset_left = 836.0
 offset_top = 520.0
 offset_right = 1860.0
 offset_bottom = 1382.0
 
-[node name="character" type="TextureRect" parent="CanvasLayer/selectm"]
+[node name="character" type="TextureRect" parent="CanvasLayer/selectm" unique_id=8380771]
 layout_mode = 0
 offset_left = 181.0
 offset_top = 741.0
 offset_right = 637.0
 offset_bottom = 1245.0
 
-[node name="flechaa" type="TextureRect" parent="CanvasLayer/selectm"]
+[node name="flechaa" type="TextureRect" parent="CanvasLayer/selectm" unique_id=659352220]
 layout_mode = 0
 offset_left = 22.0
 offset_top = 3.0
@@ -8107,17 +8108,17 @@ offset_bottom = 503.0
 texture = ExtResource("10_k817x")
 script = ExtResource("17_7w7ba")
 
-[node name="flechaahover" type="Area2D" parent="CanvasLayer/selectm/flechaa"]
+[node name="flechaahover" type="Area2D" parent="CanvasLayer/selectm/flechaa" unique_id=1401988779]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/selectm/flechaa/flechaahover"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/selectm/flechaa/flechaahover" unique_id=123828768]
 position = Vector2(264.5, 245.5)
 shape = SubResource("RectangleShape2D_fhaki")
 
-[node name="musicaNivel" type="AudioStreamPlayer" parent="."]
+[node name="musicaNivel" type="AudioStreamPlayer" parent="." unique_id=966298187]
 stream = ExtResource("26_k817x")
 autoplay = true
 
-[node name="efectoSeleccion" type="AudioStreamPlayer" parent="."]
+[node name="efectoSeleccion" type="AudioStreamPlayer" parent="." unique_id=337105388]
 stream = ExtResource("27_pir1q")
 
 [connection signal="gui_input" from="CanvasLayer/start1" to="CanvasLayer/start1" method="_on_gui_input"]

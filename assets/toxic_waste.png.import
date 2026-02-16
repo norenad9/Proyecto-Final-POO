@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dyq2ojmkv0u6n"
-path="res://.godot/imported/toxic_waste.png-0de6dd17ba04eb4bf6abf60ee83b4a42.ctex"
+path="res://.godot/imported/toxic_waste.png-6b04f0c968490ff1b5232dd7456d2d7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/toxic_waste.png"
-dest_files=["res://.godot/imported/toxic_waste.png-0de6dd17ba04eb4bf6abf60ee83b4a42.ctex"]
+source_file="res://Assets/toxic_waste.png"
+dest_files=["res://.godot/imported/toxic_waste.png-6b04f0c968490ff1b5232dd7456d2d7b.ctex"]
 
 [params]
 

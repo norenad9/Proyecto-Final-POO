@@ -1,7 +1,7 @@
 extends Node2D
 
 # ============================================================
-# 🧩 VARIABLES
+# VARIABLES
 # ============================================================
 
 var minijuego_actual: Node = null
@@ -16,7 +16,7 @@ var shield_recharging = false
 var hacker_activado = false
 @onready var hackerm = $hackerm
 @onready var hacker = $hackerm   # Cambia la ruta si tu nodo no se llama así
-
+@onready var audio = $AudioStreamPlayer
 
 
 @onready var player = $Player2
@@ -27,7 +27,7 @@ var hacker_activado = false
 @onready var computer5 = $Computer14
 
 # ============================================================
-# 🚀 INICIO
+#  INICIO
 # ============================================================
 
 # Arrays para almacenar robbers y mapeos
@@ -47,14 +47,15 @@ var next_spawn = 5.0  # Primer spawn más rápido
 var total_minijuegos = 5
 
 func _ready():
+	audio.play()
 	print("🌍 Cargando Lab3...")
 	
 	# IMPORTANTE: Agregar el jugador al grupo "jugador"
 	if player:
 		player.add_to_group("jugador")
-		print("✅ Player agregado al grupo 'jugador'")
+		print(" Player agregado al grupo 'jugador'")
 	else:
-		print("❌ ERROR: No se encontró el Player")
+		print(" ERROR: No se encontró el Player")
 	
 	# Buscar y capturar TODOS los robbers de forma flexible
 	buscar_todos_los_robbers()
@@ -71,7 +72,7 @@ func _ready():
 	for comp in [computer, computer2, computer3, computer4, computer5]:
 		if comp:
 			comp.is_blocked = true
-			print("🔒 Computadora bloqueada al inicio:", comp.name)
+			print(" Computadora bloqueada al inicio:", comp.name)
 	
 	# Inicializar diccionarios de estado
 	minijuegos_completados = {
@@ -102,9 +103,9 @@ func _ready():
 	
 	
 	
-	print("✅ Sistema inicializado correctamente")
-	print("📋 Total robbers encontrados:", robbers.size())
-	print("🎮 Presiona E cerca de una computadora desbloqueada para jugar")
+	print(" Sistema inicializado correctamente")
+	print(" Total robbers encontrados:", robbers.size())
+	print(" Presiona E cerca de una computadora desbloqueada para jugar")
 	
 func start_hacker_timer():
 	# Esperar 25 segundos antes de activar hacker
@@ -117,10 +118,10 @@ func activar_hacker():
 
 	# Mostrar hacker
 	hackerm.visible = true
-	print("🛑 HACKERM APARECE – SISTEMA SABOTEADO")
+	print(" HACKERM APARECE – SISTEMA SABOTEADO")
 	# ⏳ Hackerm dura solo 8 segundos
 	await get_tree().create_timer(8.0).timeout
-	print("👻 HACKERM SE RETIRA – SISTEMA RESTABLECIDO")
+	print(" HACKERM SE RETIRA – SISTEMA RESTABLECIDO")
 
 	hackerm.visible = false
 
@@ -131,14 +132,14 @@ func activar_hacker():
 			minijuegos_completados[comp] = false
 			robbers_aparecidos[comp] = false
 			comp.is_blocked = false  # Permitir interactuar
-			print("💥 Computadora saboteada:", comp.name)
+			print(" Computadora saboteada:", comp.name)
 
 	# Mostrar mensaje visual
 	mostrar_mensaje_hack()
 	
 func mostrar_mensaje_hack():
 	var msg = Label.new()
-	msg.text = "⚠ SYSTEM BREACHED – REPAIR ALL TERMINALS!"
+	msg.text = " SYSTEM BREACHED – REPAIR ALL TERMINALS!"
 	msg.add_theme_font_size_override("font_size", 60)
 	msg.add_theme_color_override("font_color", Color.RED)
 	msg.add_theme_color_override("font_shadow_color", Color.BLACK)
@@ -169,8 +170,8 @@ func verificar_configuracion_input():
 			if event is InputEventKey:
 				print("    Tecla:", event.as_text())
 	else:
-		print("  ❌ ERROR: No existe la acción 'interactuar' en el InputMap")
-		print("  ℹ️ Ve a Project Settings > Input Map y agrega:")
+		print("   ERROR: No existe la acción 'interactuar' en el InputMap")
+		print("   Ve a Project Settings > Input Map y agrega:")
 		print("     - Nombre: interactuar")
 		print("     - Tecla: E")
 		
@@ -239,7 +240,7 @@ func _conectar_computadores():
 
 
 func buscar_todos_los_robbers():
-	print("\n🔍 Buscando robbers manualmente y asignando correctamente...")
+	print("\n Buscando robbers manualmente y asignando correctamente...")
 
 	robbers = [
 		$robber,
@@ -279,7 +280,7 @@ func configurar_jugador():
 	if game_manager and game_manager.has_method("get"):
 		var selected = game_manager.get("selected_character")
 		if selected:
-			print("🧩 Personaje seleccionado:", selected)
+			print(" Personaje seleccionado:", selected)
 			
 			var selected_sprite: AnimatedSprite2D = null
 			var selected_collision: CollisionShape2D = null
@@ -302,7 +303,7 @@ func configurar_jugador():
 				if selected_sprite.has_method("play"):
 					selected_sprite.play("idle")
 	else:
-		print("⚠️ GameManager no encontrado, usando personaje por defecto")
+		print(" GameManager no encontrado, usando personaje por defecto")
 		# Activar el primer personaje disponible como fallback
 		var sprite = player.get_node_or_null("agentep")
 		var collision = player.get_node_or_null("ap")
@@ -326,10 +327,10 @@ func _process(delta):
 
 func mostrar_robber_aleatorio():
 	if robbers.size() == 0:
-		print("❌ No hay robbers en la escena")
+		print(" No hay robbers en la escena")
 		return
 	
-	print("\n🎲 Buscando robber para aparecer...")
+	print("\n Buscando robber para aparecer...")
 	
 	var robbers_disponibles = []
 	for rb in robbers:
@@ -344,7 +345,7 @@ func mostrar_robber_aleatorio():
 			print("  Disponible:", rb.name)
 
 	if robbers_disponibles.size() == 0:
-		print("  ✅ No quedan robbers pendientes")
+		print("   No quedan robbers pendientes")
 		verificar_fin_juego()
 		return
 
@@ -352,7 +353,7 @@ func mostrar_robber_aleatorio():
 	var rb = robbers_disponibles[randi() % robbers_disponibles.size()]
 	var comp = robber_to_computer[rb]
 
-	print("  👹 Aparece:", rb.name, "→ Desbloquea:", comp.name)
+	print("   Aparece:", rb.name, "→ Desbloquea:", comp.name)
 
 	# Hacer visible el robber
 	rb.visible = true
@@ -372,12 +373,12 @@ func mostrar_robber_aleatorio():
 	var icon = comp.get_node_or_null("icon_alerta")
 	if icon:
 		icon.visible = true
-		print("  💡 Icono activado en:", comp.name)
+		print("   Icono activado en:", comp.name)
 
 	# DESBLOQUEAR la computadora
 	if not minijuegos_completados[comp]:
 		comp.is_blocked = false
-		print("  🔓 DESBLOQUEADA:", comp.name, "- Ahora puedes presionar E para jugar")
+		print("   DESBLOQUEADA:", comp.name, "- Ahora puedes presionar E para jugar")
 	
 	# Programar desaparición
 	
@@ -395,22 +396,22 @@ func _on_computer_interactuar(minijuego_path: String, comp):
 	
 	# 1. Si ya está COMPLETADO → no se puede abrir
 	if minijuegos_completados.get(comp, false) == true:
-		print("  ❌ Este minijuego ya fue completado y está bloqueado permanentemente")
+		print("   Este minijuego ya fue completado y está bloqueado permanentemente")
 		return
 
 	# 2. Si está bloqueado porque no ha aparecido su robber
 	if comp.is_blocked:
-		print("  ❌ Aún no puedes jugar: espera a que aparezca el Robber")
+		print("   Aún no puedes jugar: espera a que aparezca el Robber")
 		return
 
-	print("  ✅ Abriendo minijuego...")
+	print("   Abriendo minijuego...")
 	minijuego_en_progreso = true
 	abrir_minijuego(minijuego_path, comp)
 
 
 func abrir_minijuego(path, comp):
 	if minijuego_actual != null:
-		print("  ⚠️ Ya hay un minijuego abierto")
+		print("   Ya hay un minijuego abierto")
 		return
 	
 	# Pausar el jugador
@@ -421,7 +422,7 @@ func abrir_minijuego(path, comp):
 	# Cargar el minijuego
 	var scene = load(path)
 	if scene == null:
-		print("  ❌ ERROR: No se pudo cargar la escena:", path)
+		print("   ERROR: No se pudo cargar la escena:", path)
 		print("  Verifica que el archivo existe en esa ruta")
 		finalizar_cierre()
 		return
@@ -450,9 +451,9 @@ func abrir_minijuego(path, comp):
 	else:
 		print("  ⚠️ El minijuego no tiene señal 'puzzle_failed'")
 	
-	print("  ✅ Minijuego cargado correctamente")
+	print("   Minijuego cargado correctamente")
 func _cerrar_minijuego_exitoso():
-	print("\n🏆 Minijuego completado exitosamente!")
+	print("\n Minijuego completado exitosamente!")
 
 	if minijuego_actual and minijuego_actual.has_meta("computer"):
 		var comp = minijuego_actual.get_meta("computer")
@@ -460,13 +461,13 @@ func _cerrar_minijuego_exitoso():
 		# MARCAR COMO COMPLETADO Y BLOQUEAR PERMANENTEMENTE
 		minijuegos_completados[comp] = true
 		comp.is_blocked = true
-		print("  🔒 Minijuego bloqueado permanentemente:", comp.name)
+		print("   Minijuego bloqueado permanentemente:", comp.name)
 		
 		# Ocultar robber si está visible
 		for rb in robber_to_computer.keys():
 			if robber_to_computer[rb] == comp and rb.visible:
 				rb.visible = false
-				print("  👻 Ocultando robber:", rb.name)
+				print("   Ocultando robber:", rb.name)
 		
 		# Mostrar progreso
 		var completados = minijuegos_completados.values().count(true)
@@ -474,19 +475,18 @@ func _cerrar_minijuego_exitoso():
 		var icon = comp.get_node_or_null("icon_alerta")
 		if icon:
 			icon.visible = false
-			print("📴 Icono apagado en:", comp.name)
-		print("\n📊 PROGRESO:")
+			print("Icono apagado en:", comp.name)
+		print("\n PROGRESO:")
 		print("  Completados:", completados, "/", total_minijuegos)
 		print("  Aparecidos:", aparecidos, "/", total_minijuegos)
 
 	finalizar_cierre()
-	
-	# ⬇️ CAMBIO IMPORTANTE ⬇️
+	 
 	var completados = minijuegos_completados.values().count(true)
 	
 	if completados == total_minijuegos:
 		# Ganaste, sin importar si estás o no en tiempo extra
-		print("🎉 ¡Todos los minijuegos completados!")
+		print(" ¡Todos los minijuegos completados!")
 		mostrar_ventana_victoria()
 	elif not tiempo_extra_activo:
 		# Aún no estamos en tiempo extra: aquí sí usamos la lógica normal
@@ -494,19 +494,19 @@ func _cerrar_minijuego_exitoso():
 	else:
 		# Estamos en tiempo extra y todavía faltan minijuegos:
 		# NO hacemos nada; el timer de 15 s decidirá luego en verificar_tiempo_extra()
-		print("⏱️ Minijuego completado durante tiempo extra, pero aún faltan otros. Sigue jugando...")
+		print(" Minijuego completado durante tiempo extra, pero aún faltan otros. Sigue jugando...")
 
 
 
 func _cerrar_minijuego_fallido():
-	print("\n❌ Minijuego cerrado/fallido")
-	print("  ℹ️ Puedes volver a intentarlo")
+	print("\n Minijuego cerrado/fallido")
+	print("   Puedes volver a intentarlo")
 	
 	finalizar_cierre()
 	
 	# Si estamos en tiempo extra y fallas, game over
 	if tiempo_extra_activo:
-		print("  💀 Fallaste durante el tiempo extra - GAME OVER")
+		print("   Fallaste durante el tiempo extra - GAME OVER")
 		mostrar_ventana_game_over()
 
 
@@ -533,7 +533,7 @@ func verificar_fin_juego():
 
 	# Victoria
 	if completados == total_minijuegos:
-		print("\n🎉 VICTORIA! Todos los minijuegos completados!")
+		print("\n VICTORIA! Todos los minijuegos completados!")
 		mostrar_ventana_victoria()
 		return
 
@@ -550,11 +550,11 @@ func activar_tiempo_extra():
 	
 	tiempo_extra_activo = true
 	
-	print("EXTRA TIME ACTIVATED – 15 SECONDS!")
+	print("EXTRA TIME ACTIVATED – 30 SECONDS!")
 	mostrar_mensaje_tiempo_extra()
 	
 	# Timer de 10 segundos
-	await get_tree().create_timer(15.0).timeout
+	await get_tree().create_timer(30.0).timeout
 	verificar_tiempo_extra()
 
 
@@ -565,16 +565,16 @@ func verificar_tiempo_extra():
 	var completados = minijuegos_completados.values().count(true)
 	
 	if completados == total_minijuegos:
-		print("🎉 Lo lograste en el último momento!")
+		print(" Lo lograste en el último momento!")
 		mostrar_ventana_victoria()
 	else:
-		print("💀 Se acabó el tiempo - GAME OVER")
+		print(" Se acabó el tiempo - GAME OVER")
 		mostrar_ventana_game_over()
 
 
 func mostrar_mensaje_tiempo_extra():
 	var warning_label = Label.new()
-	warning_label.text = "EXTRA TIME: 15 SECONDS!"
+	warning_label.text = "EXTRA TIME: 30 SECONDS!"
 	warning_label.add_theme_font_size_override("font_size", 48)
 	warning_label.add_theme_color_override("font_color", Color(0, 1.0, 1.0))
 	warning_label.add_theme_color_override("font_shadow_color", Color.BLACK)
@@ -602,7 +602,7 @@ func mostrar_mensaje_tiempo_extra():
 		add_child(countdown_label)
 	
 	# Animación de cuenta regresiva
-	for i in range(15, 0, -1):
+	for i in range(30, 0, -1):
 		if game_over_mostrado or not tiempo_extra_activo:
 			break
 		countdown_label.text = str(i)

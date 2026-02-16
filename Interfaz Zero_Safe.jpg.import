@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1k2lkn6rt0wt"
-path="res://.godot/imported/biotanks.png-06575c370ff048ac6cb6e2e415bc462c.ctex"
+uid="uid://byklyym4jw74j"
+path="res://.godot/imported/Interfaz Zero_Safe.jpg-cb9b6490b3138aae984d2ec681f95747.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/biotanks.png"
-dest_files=["res://.godot/imported/biotanks.png-06575c370ff048ac6cb6e2e415bc462c.ctex"]
+source_file="res://Interfaz Zero_Safe.jpg"
+dest_files=["res://.godot/imported/Interfaz Zero_Safe.jpg-cb9b6490b3138aae984d2ec681f95747.ctex"]
 
 [params]
 

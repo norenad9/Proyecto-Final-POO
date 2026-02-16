@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcbcnmfljarp6"
-path="res://.godot/imported/monitors.png-3871f0fb72a99733bf2f6c98af01f751.ctex"
+path="res://.godot/imported/monitors.png-564a0518081507b9a852c666470cb807.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/monitors.png"
-dest_files=["res://.godot/imported/monitors.png-3871f0fb72a99733bf2f6c98af01f751.ctex"]
+source_file="res://Assets/monitors.png"
+dest_files=["res://.godot/imported/monitors.png-564a0518081507b9a852c666470cb807.ctex"]
 
 [params]
 

@@ -853,6 +853,8 @@ func game_over():
 func _on_close_pressed():
 	audio.stream_paused=true
 	perder.play()
+	
+	
 	close_minigame()
 
 func close_minigame():

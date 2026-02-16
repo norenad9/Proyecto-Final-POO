@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://da0xpg81h74ss"
-path="res://.godot/imported/cables_and_wires.png-35710021a7fb297692aeb96166ee4720.ctex"
+path="res://.godot/imported/cables_and_wires.png-aab94f58890fba0980b1463483514308.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cables_and_wires.png"
-dest_files=["res://.godot/imported/cables_and_wires.png-35710021a7fb297692aeb96166ee4720.ctex"]
+source_file="res://Assets/cables_and_wires.png"
+dest_files=["res://.godot/imported/cables_and_wires.png-aab94f58890fba0980b1463483514308.ctex"]
 
 [params]
 

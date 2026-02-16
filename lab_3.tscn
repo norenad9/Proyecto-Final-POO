@@ -1,6 +1,6 @@
 [gd_scene load_steps=127 format=4 uid="uid://c5ebinseep1q3"]
 
-[ext_resource type="Texture2D" uid="uid://cvurx12ctqq0s" path="res://assets/tilemap_all.png" id="1_ef53l"]
+[ext_resource type="Texture2D" uid="uid://cvurx12ctqq0s" path="res://Assets/tilemap_all.png" id="1_ef53l"]
 [ext_resource type="Script" uid="uid://2b2b4wmayqji" path="res://lab_3.gd" id="1_mbkkb"]
 [ext_resource type="Script" uid="uid://cf5qr5su08gcw" path="res://player_2.gd" id="2_eprvb"]
 [ext_resource type="Texture2D" uid="uid://c6jekromww00d" path="res://agentez/agentezclimb1.png" id="3_mbkkb"]
@@ -73,7 +73,7 @@
 [ext_resource type="Script" uid="uid://b2uuhhhsmy65h" path="res://prisoner_22.gd" id="71_7b78j"]
 [ext_resource type="Script" uid="uid://css6oucu1lttt" path="res://prisoner_controller_1.gd" id="72_e7xql"]
 [ext_resource type="Texture2D" uid="uid://d34q60ioyh3ha" path="res://interfaz/corazon.png" id="73_7b78j"]
-[ext_resource type="AudioStream" uid="uid://c2bi5cx57e32v" path="res://Music/mapas.mp3" id="74_7b78j"]
+[ext_resource type="AudioStream" uid="uid://dj7aghppcsni0" path="res://Music/mapas3.mp3" id="74_7b78j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_od4wa"]
 texture = ExtResource("1_ef53l")
